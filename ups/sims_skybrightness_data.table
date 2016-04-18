@@ -1,3 +1,2 @@
-setupRequired(base)
 envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)
 envSet(SIMS_SKYBRIGHTNESS_DATA_DIR, ${PRODUCT_DIR}/data)
