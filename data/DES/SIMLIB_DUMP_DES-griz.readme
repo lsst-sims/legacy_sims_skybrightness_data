@@ -1,0 +1,53 @@
+
+         SIMLIB_DUMP_DES-griz.DAT :
+Description of DES Observing Conditions at CTIO
+
+           R.Kessler
+           May 2017
+
+To simulate the DES-SN survey, we tabulate the observed 
+cadence from 10,000 random sky locations in the ten SN
+fields. Each cadence includes {MJD,PSF,SKYMAG,ZP} for all
+observations. The resulting "SIMLIB" file has been translated
+here into a simpler text file, and with just 200 cadences
+spanning 4 seasons.
+
+Here are the column definitions:
+
+* ROW :  row number in file
+
+* LIBID : library ID; same ID means same RA & DEC.
+
+* RA,DEC : random sky location, degrees
+
+* MJD : Modified Julien Date
+
+* BAND : g,r,i or z
+
+* ZP_pe : zeropoint in photo-electrons. 
+          Corresponding exposure times are in Table 1 of K15
+
+* SKYMAG : sky brightness, mag/asec^2
+
+* PSF : FWHM, arcsec.
+        Noise-equivalent area (NEA) is computed from the actual 
+        PSF shape. Sigma(PSF) is computed for effective Gaussian 
+        using NEA = 4*PI*sigma^2. PSF = sigma*2.235, and thus
+        PSF somewhat accounts for non-Gaussian tails.
+
+* M5SIG : computed 5-sigma limiting mag
+
+# -----------------
+Misc notes:
+- Astro tools will be needed to compute things
+  like airmass and mooniness.
+- PSF includes instrument, about 0.6 arcsec. Maybe a bit
+  worse in Y1 because of temperature variations at the 
+  primary mirror.
+- Y3 had the worst weather ever, losing more nights than
+  the other three seasons (Y1,Y2,Y4) combined.
+- Science Verification (SV) not included.
+- DES-SN observations are NOT random in time;
+  SN obs triggered by PSF>1.1'' OR 7-days without obs.
+
+
